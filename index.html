@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>ADIDAS</title>
+ 
+ <script src="js/jquery-3.3.1.js"></script>
+ <script>
+ $(function(){
+  
+
+  
+var $menu = $('header a');
+//menu li a as variable
+  
+  //when menu a link is clicked..  
+  $menu.click(function(){
+   
+   var num = $(this).parent().index();
+   //finding the index of each li's
+   var sect= $('section div').eq(num).offset().top;
+   //(~th li's) ~th div's locate its/each coordinates from the body
+   
+   $('html, body').animate({'scrollTop':sect-100},1000);
+   //body to be moved its scroll top of the amout of
+   //sect-> div's located coordinate.
+  $('header a').css('color','white'); 
+  $(this).css('color','#9dcc49');
+   
+  });
+  
+  $(window).scroll(function(){
+   var scr= $(this).scrollTop();
+   //find the window scrollTop's distance
+   
+   $('section div').each(function(){
+    var di= $(this).offset().top;
+    //making each div offet calculation a function.
+    
+    //making a function if the scroll number is higher than the division offset [to give if,] 
+    
+    //meaning if the scroll enters the div zone, thats = to div+100px or higher it will change color of a link
+    
+    if(di <= scr+100){
+     //adding 100 because of the height of the menu -100px;
+     var menuIndex = $(this).index();
+     //bringing the index number of whatever'this'is 
+     $('header a').css('color','white');
+     //resetting the a's color as all white
+     
+     $('header li').eq(menuIndex).find('a').css('color','#9dcc49')
+     //header> li>'s index no. of this > find a and change the color.
+    }
+    
+   })
+
+  });
+  
+  
+  
+
+  
+  
+ });
+ //actual function ends
+ 
+ </script>
+ <link rel="stylesheet" href="css/index.css">
+ <link rel="stylesheet" href="css/font.css">
+</head>
+<body>
+<header>
+<nav>
+  <ul>
+   <li><a href="#">HOME</a></li>
+   <li><a href="#about">ADIDAS</a></li>
+   <li><a href="#cool">COOL</a></li>
+   <li><a href="#coloreds">COLOUREDS</a></li>
+   <li><a href="#flexi">FLEXI</a></li>
+   
+   <li><a href="#footer">|||</a></li>
+  </ul>
+</nav>
+ 
+</header>
+<div class="wrap">
+
+ 
+ <section>
+   <div id="home">
+    <h1>FLEXI</h1>
+   </div>
+   
+    <div id="about">
+        <article class="lines">
+            <hr>
+            <hr>
+            <hr>
+            <hr>
+            <hr>
+            <hr>
+      </article>
+      <h1> LIFE OF STRIPES</h1>
+      
+      <h2>Every great story has a beginning</h2>
+      <p>This one started in a small town in Bavaria, Germany. 
+      After first steps in his mother’s wash kitchen, 
+      Adi Dassler registered the “Gebrüder Dassler 
+      Schuhfabrik” in 1924 and embarked on his mission 
+      to provide athletes with the best possible equipment. Gold medals in Amsterdam (1928, Lina Radke) and Berlin (1936, Jesse Owens) were first rewards and
+      milestones 
+      </p>
+      <p>
+      -and only the start of our story...</p>
+     
+
+    </div>
+    
+   <div id="cool">
+    <img src="images/cool_breath_10.jpg" alt="">
+   </div>
+   
+   <div id="coloreds">
+     <h1>c<span class="green">o</span>l<span class="light_green">o</span><span class="pink">r</span><span class="apricot">e</span>d<span class="maroon">s</span>
+     </h1>
+    
+    
+     <h2>limited 
+      <span class="light_green">G</span>R<span class="green">EE</span>N Series
+     </h2>
+     
+     <article class="shoes">
+      <h3>BLACK</h3>
+      <img src="images/black_shoes_03.png" alt="">
+     </article>
+     
+     <article class="shoes">
+      <h3>KHAKI</h3>
+      <img src="images/khaki_shoes_03.png" alt="">
+      
+     </article>
+     
+     <article class="shoes">
+      <h3>GREEN</h3>
+      <img src="images/green_shoes_03.png" alt="">
+     </article>
+     
+   </div>
+   
+   
+    <div id="flexi">
+    <h1>NEUTRAL RUNNING SHOES WITH A SOCK-LIKE FIT AND <br><span>CUSHIONED 
+COMFORT</span></h1>
+
+   
+   <article class="para">
+
+
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+    <p>
+        When your breath becomes
+        effortless, you know you're in
+        the zone. These running shoes
+        are designed specifically for
+        cross training, with a seamless
+        Forgedmesh upper that hugs
+        your foot comfortably and
+        provides reinforced support
+        for side-to-side movement.
+        The running shoes pair a 
+        super-grippy outsole with 
+        springy Bounce that energizes 
+        every stride for lasting comfort.
+    
+   </p>
+    </article>
+   
+     
+   </div>
+   
+   
+     <div id="footer">
+    <h2>THE CHOICE IS YOURS</h2>
+    <img src="images/bg_1_27.jpg" alt="">
+   
+   <p>
+   &#42;
+   mic &nbsp; drop
+   &#42;</p>
+  
+  <span>||| adidas |||</span>
+  
+  </div>
+  
+ </section>
+ 
+ 
+ 
+ 
+</div>
+
+
+
+
+
+ 
+</body>
+</html>
